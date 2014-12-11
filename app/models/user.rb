@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   def password
     @password ||= Password.new(password_hash) if password_hash
+    #password_hash must match migration t.string = password_hash
   end
 
   def password=(new_password)

@@ -5,6 +5,7 @@ end
 
 get '/profile/:user_name' do
   @user = User.find(params[:user_name])
+  @tweets = Tweet.all.where(user_id: @user.id)
   erb :profile
 end
 
@@ -20,6 +21,7 @@ post '/timeline/:user_name' do
   redirect'/timeline/:user_name'
 end
 
+#TWEET IS NOT A SEPARATE PAGE. BUILD DELETE INTO PROFILE AND TIMELINE
 get '/tweet/:user_name' do
   @tweet = Tweet.find_by user_name: params[:user_name]
   #delete option on this page
@@ -32,6 +34,7 @@ delete '/tweet/:user_name' do
   redirect '/profile/:user_name'
 end
 
+#FOLLOWERS IS NOT A SEPARATE PAGE. IT'S A SIDEBAR ON PROFILE
 get '/follow/:user_name' do
 
   #both your followers & who you follow
@@ -60,15 +63,16 @@ end
 # ============SESSIONS
 get '/secret' do
   if !logged_in?
+    redirect '/'
+  else
     redirect '/timeline/:user_name'
   end
-  erb :secret
 end
 
 post '/signup' do
   user = User.new(params)
   if user.save
-    session[:user_name]=user.id
+    session[:user_id]=user.id
   else
     flash[:error]=user.errors.full_messages
   end
@@ -78,7 +82,7 @@ end
 post '/login' do
   @user = User.find_by_email(params[:email])
   if @user && @user.authenticate(params[:password])
-    session[:user_name] = @user.id
+    session[:user_id] = @user.id
     redirect '/secret'
   else
     flash[:errors] = "Try again"
@@ -88,7 +92,7 @@ post '/login' do
 end
 
 get '/logout' do
-  session[:user_name]=nil
+  session[:user_id]=nil
   redirect '/'
 end
 
