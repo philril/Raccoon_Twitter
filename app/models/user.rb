@@ -3,7 +3,11 @@ class User < ActiveRecord::Base
   has_many :followings
   has_many :tweets
 
-  # include BCrypt
+  validates :email, presence: true, uniqueness: true
+
+# Add in user authentication with bCrypt
+
+  include 'bcrypt'
 
   def password
     @password ||= Password.new(password_hash) if password_hash
