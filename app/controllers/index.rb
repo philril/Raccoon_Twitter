@@ -51,6 +51,7 @@ get '/timeline/:user_name' do
 
   @tweet_objects = []
   @user_ids.each { |user_id| @tweet_objects << Tweet.where(:user_id = user_id)
+
   erb :timeline
 end
 
