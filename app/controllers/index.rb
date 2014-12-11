@@ -57,7 +57,6 @@ get '/timeline/:user_name' do
 end
 
 
-
 # ============SESSIONS
 get '/secret' do
   if !logged_in?
