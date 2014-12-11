@@ -9,19 +9,18 @@ get '/profile/:user_name' do
 end
 
 # for header new tweets in profile & timeline
-post '/tweet' do
+post '/profile/:user_name' do
   @user = User.find(params[:user_name])
   @tweet = Tweet.create(user_id: @user.id, content: params[:content])
   redirect'/profile/:user_name'
 end
 
-# # for header new tweets in profile & timeline
-# post '/timeline/:user_name' do
-#   @user = User.find(params[:user_name])
-#   @tweet = Tweet.create(user_id: @user.id, content: params[:content])
-#   redirect'/timeline/:user_name'
-# end
-
+# for header new tweets in profile & timeline
+post '/timeline/:user_name' do
+  @user = User.find(params[:user_name])
+  @tweet = Tweet.create(user_id: @user.id, content: params[:content])
+  redirect'/timeline/:user_name'
+end
 
 # get '/tweet/:user_name' do
 #   @tweet = Tweet.find_by user_name: params[:user_name]
@@ -56,7 +55,6 @@ get '/timeline/:user_name' do
   @tweet_objects = @tweet_objects.sort_by{|tweet_object| tweet_object.created_at}.reverse
   erb :timeline
 end
-
 
 
 # ============SESSIONS
