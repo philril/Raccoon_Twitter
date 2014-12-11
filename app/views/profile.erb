@@ -1,0 +1,61 @@
+  <div class = "container">
+    <div class="row">
+      <p></p>
+      <hr>
+    </div>
+
+    <div class="row">
+
+        <div class="span12">
+
+            <div class = "col-md-3">
+              <div id="profile"
+                <p></p>
+                <center>
+                  <img src="http://www.gravatar.com/avatar/1b98c6f2d8425d7312eeb13724b39cb5?s=200" />
+                  <p></p>
+                  <a href = "#" class = "btn btn-default">Follow</a>
+                  <a href = "#" class = "btn btn-default">Followers</a>
+                </center>
+                <p></p>
+              </div>
+
+            </div>
+
+          <div class="row">
+
+            <div class = "col-md-3">
+
+              <div id="tweety" >
+                <h3><a href="profile/:user_name"><%= user_name %></a></h3>
+                  <p> This is a fake tweet </p>
+
+                <center>
+                  <a href = "#" class = "btn btn-default">Re-Tweet</a>
+                  <a href = "#" class = "btn btn-default">Delete</a>
+                </center>
+              </div>
+
+              <p></p>
+
+              <div id="tweety">
+                <h3><a href="/profile/:user_name"><%= user_name %></a></h3>
+                  <p> This is a fake tweet </p>
+
+                <center>
+                  <a href = "/retweet/:user_id" class = "btn btn-default">Re-Tweet</a>
+                  <a href = "#" class = "btn btn-default">Delete</a>
+                </center>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+    </div>
+
+  </div>
+
