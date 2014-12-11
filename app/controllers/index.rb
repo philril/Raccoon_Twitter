@@ -36,16 +36,17 @@ get '/follow/:user_name' do
 
   #both your followers & who you follow
   @user = User.find(params[:user_name])
-  @followers = Follower.where(user_id: @user.id)
-  @followers = @followers.follower_id.user
+  @followers_ids = Follow.where(user: @user.id)
+  @followers_objects = @followers.followed_by.user
   #returns list of objects for specific user.. Erb will get followers ids
-  @following = Follower.where(follower_id: @user.id)
-  @following = @following.user_id.user
+  @following_ids = Follow.where(followed_by: @user.id)
+  @following_objects = @following.user.user
 end
 
-get '/timeline/user_name' do
-  @followers = Follower.where(user_id: @user.id)
-  @user_ids = @followers.follower_id.user.id
+get '/timeline/:user_name' do
+  @user = User.find(params[:user_name])
+  @follow_objects = Follow.where(user: @user.id)
+  @user_ids = @follow_objects.followed_by
   # @tweets = @user_objects.user_id.tweet
 
   @tweet_objects = []
