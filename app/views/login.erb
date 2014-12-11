@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <title>Twitter</title>
+    <meta name="viewport" content="width=devices-width, initial-scale=1.0">
+    <link href = "../../public/css/bootstrap.min.css" rel = "stylesheet">
+    <link href = "../../public/css/application.css" rel = "stylesheet">
+  </head>
+
+  <body>
+    <div class = "container">
+
+
+        <div class = "jumbotron">
+          <p><center><h1>Welcome</h1></center></p>
+          <hr>
+
+          <div class = "row">
+
+            <div class = "col-md-3">
+            </div>
+
+            <div class = "col-md-3">
+              <div id="signup">
+                <form class="form-horizontal" action="/signup" method="post">
+                <fieldset>
+                  <!-- Form Name -->
+                  <legend>Sign-Up:</legend>
+
+                  <!-- Text input-->
+                  <div class="control-group">
+                    <label class="control-label" for="name">User Name:</label>
+                    <div class="controls">
+                      <input id="name" name="name" type="text" placeholder="John" class="input-large" required="">
+
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="control-group">
+                    <label class="control-label" for="email">Email:</label>
+                    <div class="controls">
+                      <input id="email" name="email" type="text" placeholder="john@yah.com" class="input-large" required="">
+
+                    </div>
+                  </div>
+
+                  <!-- Password input-->
+                  <div class="control-group">
+                    <label class="control-label" for="password">Password:</label>
+                    <div class="controls">
+                      <input id="password" name="password" type="password" placeholder="secret" class="input-large" required="">
+
+                    </div>
+                  </div>
+
+                  <!-- Button -->
+                  <div class="control-group">
+                    <label class="control-label" for="submit"></label>
+                    <div class="controls">
+                      <input type="submit" name="submit" class="btn btn-primary">
+                    </div>
+                  </div>
+
+                </fieldset>
+                </form>
+              </div>
+            </div>
+
+            <div class = "col-md-3">
+              <div id="login">
+                <form class="form-horizontal" action="/login" method="post" >
+                  <fieldset>
+                    <!-- Form Name -->
+                    <legend>Log-in</legend>
+
+                    <!-- Text input-->
+                    <div class="control-group">
+                      <label class="control-label" for="name">User Name:</label>
+                      <div class="controls">
+                        <input id="user_name" name="user_name" type="text" placeholder="John" class="input-large" required="">
+
+                      </div>
+                    </div>
+
+                    <!-- Password input-->
+                    <div class="control-group">
+                      <label class="control-label" for="password">Password:</label>
+                      <div class="controls">
+                        <input id="password" name="password" type="password" placeholder="secret" class="input-large" required="">
+
+                      </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="control-group">
+                      <label class="control-label" for="submit"></label>
+                      <div class="controls">
+                        <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</html>
+
+

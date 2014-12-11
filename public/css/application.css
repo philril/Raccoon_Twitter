@@ -1,0 +1,28 @@
+#signup {
+  float: left;
+}
+
+#login {
+  float: right;
+
+}
+
+#tweety {
+  background-color: 6495ED;
+  border-radius: 20px;
+  border: 3px solid black;
+  width: 350px;
+
+}
+
+#profile {
+  background-color: 6495ED;
+  border-radius: 20px;
+  border: 3px solid black;
+
+}
+
+#maketweet {
+  position: relative;
+  float: right;
+}
