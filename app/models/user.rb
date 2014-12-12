@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 
 # Add in user authentication with bCrypt
 
-  include 'bcrypt'
 
   def password
     @password ||= Password.new(password_hash) if password_hash

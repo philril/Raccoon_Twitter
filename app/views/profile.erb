@@ -9,45 +9,43 @@
         <div class="span12">
 
             <div class = "col-md-3">
-              <div id="profile"
+              <div id="profile">
                 <p></p>
                 <center>
-                  <img src="http://www.gravatar.com/avatar/1b98c6f2d8425d7312eeb13724b39cb5?s=200" />
+                  <img src="http://www.gravatar.com/avatar/<%= @hash_email %>s=200" />
                   <p></p>
                   <a href = "#" class = "btn btn-default">Follow</a>
-                  <a href = "#" class = "btn btn-default">Followers</a>
+                  <a href = "/follow/<%= @user.user_name%>" class = "btn btn-default">Followers</a>
                 </center>
                 <p></p>
               </div>
 
             </div>
 
+          <br>
+
           <div class="row">
 
-            <div class = "col-md-3">
+            <center>
+              <% @user.tweets.sort_by{ |tweet| tweet.created_at }.reverse.each do |tweet| %>
 
-              <div id="tweety" >
-                <h3><a href="profile/:user_name"><%= user_name %></a></h3>
-                  <p> This is a fake tweet </p>
+                  <div id="tweety">
+                    <h3><a href="profile/:user_name"><%= @user.user_name %></a></h3>
+                      <p> <%= tweet.content %> </p>
 
-                <center>
-                  <a href = "#" class = "btn btn-default">Re-Tweet</a>
-                  <a href = "#" class = "btn btn-default">Delete</a>
-                </center>
-              </div>
+                    <center>
+                      <a href = "#" class = "btn btn-default">Re-Tweet</a>
+                      <a href = "#" class = "btn btn-default">Delete</a>
+                    </center>
+                    <br>
+                  </div>
 
-              <p></p>
+                  <br>
 
-              <div id="tweety">
-                <h3><a href="/profile/:user_name"><%= user_name %></a></h3>
-                  <p> This is a fake tweet </p>
+              <% end %>
+            </center>
 
-                <center>
-                  <a href = "/retweet/:user_id" class = "btn btn-default">Re-Tweet</a>
-                  <a href = "#" class = "btn btn-default">Delete</a>
-                </center>
 
-              </div>
 
             </div>
 
