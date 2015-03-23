@@ -1,12 +1,8 @@
 #Raccoon Twitter
 
-We built a basic Twitter clone!
+Basic Twitter clone built using Sinatra and MySQL database. Post tweets, follow your friends, and collect followers. MVP version.
 
 ### Database Schema:
-  - User has many tweets
-  - User has many followers
-  - User is followed by many users
-  - User can follow many users
 
 ![schema](http://i59.tinypic.com/j12i9t.png "Schema")
 
